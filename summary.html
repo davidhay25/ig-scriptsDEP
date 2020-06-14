@@ -1,0 +1,697 @@
+<html>
+<head>
+<link rel='stylesheet' type='text/css' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css'/>
+</head>
+<body  style='padding: 8px' >
+<h1  class='alert alert-secondary' >Extensions, ValueSets and CodeSystems defined for New Zealand Implementation Guides</h1>
+<h2>Extensions</h2>
+<table width='100%' border='1' cellspacing='0' cellpadding='5px'>
+<tr><th>IG</th><th>Id</th><th>Context</th><th>Url</th><th>Description</th><th>Used by</th></tr>
+<tr>
+<td>nzbase</td>
+<td><a href='http://build.fhir.org/ig/HL7NZ/nzbase/branches/master/StructureDefinition-birthPlace.html'>birthPlace</a></td>
+<td>
+<div>Patient</div>
+</td>
+<td>http://hl7.org.nz/fhir/StructureDefinition/birthPlace</td>
+<td>The country where the person was born</td>
+<td>
+<div><a href='http://build.fhir.org/ig/HL7NZ/nzbase/branches/master/StructureDefinition-NzPatient.html'>NzPatient</a></div>
+</td>
+</tr>
+<tr>
+<td>nzbase</td>
+<td><a href='http://build.fhir.org/ig/HL7NZ/nzbase/branches/master/StructureDefinition-buildingName.html'>buildingName</a></td>
+<td>
+<div>Address</div>
+</td>
+<td>http://hl7.org.nz/fhir/StructureDefinition/buildingName</td>
+<td>Used on an adddress datatype when a building name is needed</td>
+<td>
+<div><a href='http://build.fhir.org/ig/HL7NZ/nzbase/branches/master/StructureDefinition-nzAddress.html'>nzAddress</a></div>
+</td>
+</tr>
+<tr>
+<td>nzbase</td>
+<td><a href='http://build.fhir.org/ig/HL7NZ/nzbase/branches/master/StructureDefinition-citizenship.html'>citizenship</a></td>
+<td>
+<div>Patient</div>
+</td>
+<td>http://hl7.org.nz/fhir/StructureDefinition/citizenship</td>
+<td>New Zealand citizenship</td>
+<td>
+<div><a href='http://build.fhir.org/ig/HL7NZ/nzbase/branches/master/StructureDefinition-NzPatient.html'>NzPatient</a></div>
+</td>
+</tr>
+<tr>
+<td>nzbase</td>
+<td><a href='http://build.fhir.org/ig/HL7NZ/nzbase/branches/master/StructureDefinition-dhb.html'>dhb</a></td>
+<td>
+<div>Patient</div>
+<div>Location</div>
+</td>
+<td>http://hl7.org.nz/fhir/StructureDefinition/dhb</td>
+<td>The District Health Board the patient resides in. It is derived from the patient's primary residential address (not updated directly).</td>
+<td>
+<div><a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/StructureDefinition-HpiLocation.html'>HpiLocation</a></div>
+</td>
+</tr>
+<tr>
+<td>nzbase</td>
+<td><a href='http://build.fhir.org/ig/HL7NZ/nzbase/branches/master/StructureDefinition-domicileCode.html'>domicileCode</a></td>
+<td>
+<div>Address</div>
+</td>
+<td>http://hl7.org.nz/fhir/StructureDefinition/domicileCode</td>
+<td>The domicile code. Derived from the address </td>
+<td>
+<div><a href='http://build.fhir.org/ig/HL7NZ/nzbase/branches/master/StructureDefinition-nzAddress.html'>nzAddress</a></div>
+</td>
+</tr>
+<tr>
+<td>nzbase</td>
+<td><a href='http://build.fhir.org/ig/HL7NZ/nzbase/branches/master/StructureDefinition-informationsource.html'>informationsource</a></td>
+<td>
+<div>Patient.birthDate</div>
+</td>
+<td>http://hl7.org.nz/fhir/StructureDefinition/informationsource</td>
+<td>The source of the information. Used paricularly in the NHI. Note this not the person but rather than it came from a passport for example</td>
+<td>
+<div><a href='http://build.fhir.org/ig/HL7NZ/nhi/branches/master/StructureDefinition-NhiPatient.html'>NhiPatient</a></div>
+<div><a href='http://build.fhir.org/ig/HL7NZ/nhi/branches/master/StructureDefinition-NhiPatient.html'>NhiPatient</a></div>
+<div><a href='http://build.fhir.org/ig/HL7NZ/nhi/branches/master/StructureDefinition-NhiPatient.html'>NhiPatient</a></div>
+</td>
+</tr>
+<tr>
+<td>nzbase</td>
+<td><a href='http://build.fhir.org/ig/HL7NZ/nzbase/branches/master/StructureDefinition-nzEthnicity.html'>nzEthnicity</a></td>
+<td>
+<div>Element</div>
+</td>
+<td>http://hl7.org.nz/fhir/StructureDefinition/nzEthnicity</td>
+<td>The ethnicity of the patient. Uses level 4 codes (most detailed).</td>
+<td>
+<div><a href='http://build.fhir.org/ig/HL7NZ/nzbase/branches/master/StructureDefinition-NzPatient.html'>NzPatient</a></div>
+<div><a href='http://build.fhir.org/ig/HL7NZ/nzbase/branches/master/StructureDefinition-NzPractitioner.html'>NzPractitioner</a></div>
+</td>
+</tr>
+<tr>
+<td>nzbase</td>
+<td><a href='http://build.fhir.org/ig/HL7NZ/nzbase/branches/master/StructureDefinition-nzGeocode.html'>nzGeocode</a></td>
+<td>
+<div>Address</div>
+</td>
+<td>http://hl7.org.nz/fhir/StructureDefinition/nzGeocode</td>
+<td>The new zealand geocode. This uses a different datum from that defined in the spec for the geocode, so is an extension rather than using the element in the spec. see discussion at https://chat.fhir.org/#narrow/stream/179166-implementers/topic/geocode.20extension</td>
+<td>
+<div><a href='http://build.fhir.org/ig/HL7NZ/nzbase/branches/master/StructureDefinition-nzAddress.html'>nzAddress</a></div>
+</td>
+</tr>
+<tr>
+<td>nzbase</td>
+<td><a href='http://build.fhir.org/ig/HL7NZ/nzbase/branches/master/StructureDefinition-patient-iwi.html'>patient-iwi</a></td>
+<td>
+<div>Patient</div>
+</td>
+<td>http://hl7.org.nz/fhir/StructureDefinition/patient-iwi</td>
+<td>Details related to maori ancestry</td>
+<td>
+<div><a href='http://build.fhir.org/ig/HL7NZ/nzbase/branches/master/StructureDefinition-NzPatient.html'>NzPatient</a></div>
+</td>
+</tr>
+<tr>
+<td>nzbase</td>
+<td><a href='http://build.fhir.org/ig/HL7NZ/nzbase/branches/master/StructureDefinition-suburb.html'>suburb</a></td>
+<td>
+<div>Address</div>
+</td>
+<td>http://hl7.org.nz/fhir/StructureDefinition/suburb</td>
+<td>The suburb of the address. This is not the same as 'district' or 'state.</td>
+<td>
+<div><a href='http://build.fhir.org/ig/HL7NZ/nzbase/branches/master/StructureDefinition-nzAddress.html'>nzAddress</a></div>
+</td>
+</tr>
+<tr>
+<td>nhi</td>
+<td><a href='http://build.fhir.org/ig/HL7NZ/nhi/branches/master/StructureDefinition-SAID.html'>SAID</a></td>
+<td>
+<div>Element</div>
+</td>
+<td>http://hl7.org.nz/fhir/nhi/StructureDefinition/SAID</td>
+<td>Points to the id used buy the internal address coding. For use by advanced users only.</td>
+<td>
+<div><a href='http://build.fhir.org/ig/HL7NZ/nhi/branches/master/StructureDefinition-NhiAddress.html'>NhiAddress</a></div>
+</td>
+</tr>
+<tr>
+<td>nhi</td>
+<td><a href='http://build.fhir.org/ig/HL7NZ/nhi/branches/master/StructureDefinition-depCentile.html'>depCentile</a></td>
+<td>
+<div>Element</div>
+</td>
+<td>http://hl7.org.nz/fhir/nhi/StructureDefinition/depCentile</td>
+<td>Deprivation deciles are based on the Index of Multiple Deprivation 2015 (IMD15), which is the official measure of relative deprivation. Decile one represents the most deprived and decile 10 represents the least deprived</td>
+<td>
+<div><a href='http://build.fhir.org/ig/HL7NZ/nhi/branches/master/StructureDefinition-NhiAddress.html'>NhiAddress</a></div>
+</td>
+</tr>
+<tr>
+<td>nhi</td>
+<td><a href='http://build.fhir.org/ig/HL7NZ/nhi/branches/master/StructureDefinition-depQuintile.html'>depQuintile</a></td>
+<td>
+<div>Element</div>
+</td>
+<td>http://hl7.org.nz/fhir/nhi/StructureDefinition/depQuintile</td>
+<td>A small-area-based index providing a measure of neighbourhood deprivation</td>
+<td>
+<div><a href='http://build.fhir.org/ig/HL7NZ/nhi/branches/master/StructureDefinition-NhiAddress.html'>NhiAddress</a></div>
+</td>
+</tr>
+<tr>
+<td>nhi</td>
+<td><a href='http://build.fhir.org/ig/HL7NZ/nhi/branches/master/StructureDefinition-isPrimaryAddress.html'>isPrimaryAddress</a></td>
+<td>
+<div>Element</div>
+</td>
+<td>http://hl7.org.nz/fhir/nhi/StructureDefinition/isPrimaryAddress</td>
+<td>Indicates this is the primary residential address - each patient must have one and only one</td>
+<td>
+<div><a href='http://build.fhir.org/ig/HL7NZ/nhi/branches/master/StructureDefinition-NhiAddress.html'>NhiAddress</a></div>
+</td>
+</tr>
+<tr>
+<td>nhi</td>
+<td><a href='http://build.fhir.org/ig/HL7NZ/nhi/branches/master/StructureDefinition-meshBlock.html'>meshBlock</a></td>
+<td>
+<div>Element</div>
+</td>
+<td>http://hl7.org.nz/fhir/nhi/StructureDefinition/meshBlock</td>
+<td>A meshblock is both a geographic unit and a classification. It is the smallest geographic unit for which statistical data is reported by Stats NZ. A meshblock is a defined geographic area, varying in size from part of a city block to large areas of rural land. Meshblocks are contiguous: each meshblock borders on another to form a network covering all of New Zealand, including coasts and inlets. The meshblock classification extends out to New Zealand’s 200 mile exclusive economic zone (EEZ).</td>
+<td>
+<div><a href='http://build.fhir.org/ig/HL7NZ/nhi/branches/master/StructureDefinition-NhiAddress.html'>NhiAddress</a></div>
+</td>
+</tr>
+<tr>
+<td>nhi</td>
+<td><a href='http://build.fhir.org/ig/HL7NZ/nhi/branches/master/StructureDefinition-notValidatedAddressReason.html'>notValidatedAddressReason</a></td>
+<td>
+<div>Element</div>
+</td>
+<td>http://hl7.org.nz/fhir/nhi/StructureDefinition/notValidatedAddressReason</td>
+<td>The reason why the address has not been validated</td>
+<td>
+<div><a href='http://build.fhir.org/ig/HL7NZ/nhi/branches/master/StructureDefinition-NhiAddress.html'>NhiAddress</a></div>
+</td>
+</tr>
+<tr>
+<td>hpi</td>
+<td><a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/StructureDefinition-additional-authorization.html'>additional-authorization</a></td>
+<td>
+<div>Practitioner.qualification</div>
+</td>
+<td>http://hl7.org.nz/fhir/hpi/StructureDefinition/additional-authorization</td>
+<td>Additional authorizations that a practitioner is authorized to perform</td>
+<td>
+<div><a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/StructureDefinition-HpiPractitioner.html'>HpiPractitioner</a></div>
+</td>
+</tr>
+<tr>
+<td>hpi</td>
+<td><a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/StructureDefinition-aliasType.html'>aliasType</a></td>
+<td>
+<div>Location.alias</div>
+</td>
+<td>http://hl7.org.nz/fhir/hpi/StructureDefinition/aliasType</td>
+<td>Indicates the type of alias name. VS Binding is done by the profile.</td>
+<td>
+<div><a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/StructureDefinition-HpiLocation.html'>HpiLocation</a></div>
+<div><a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/StructureDefinition-HpiOrganization.html'>HpiOrganization</a></div>
+</td>
+</tr>
+<tr>
+<td>hpi</td>
+<td><a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/StructureDefinition-condition-on-practice.html'>condition-on-practice</a></td>
+<td>
+<div>Practitioner.qualification</div>
+</td>
+<td>http://hl7.org.nz/fhir/hpi/StructureDefinition/condition-on-practice</td>
+<td>A full description of the conditions the health practitioner is subject to in relation to their scope of practice.</td>
+<td>
+<div><a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/StructureDefinition-HpiPractitioner.html'>HpiPractitioner</a></div>
+</td>
+</tr>
+<tr>
+<td>hpi</td>
+<td><a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/StructureDefinition-death-date.html'>death-date</a></td>
+<td>
+<div>Practitioner</div>
+</td>
+<td>http://hl7.org.nz/fhir/hpi/StructureDefinition/death-date</td>
+<td>The date the person died.</td>
+<td>
+<div><a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/StructureDefinition-HpiPractitioner.html'>HpiPractitioner</a></div>
+</td>
+</tr>
+<tr>
+<td>hpi</td>
+<td><a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/StructureDefinition-location-established.html'>location-established</a></td>
+<td>
+<div>Location</div>
+</td>
+<td>http://hl7.org.nz/fhir/hpi/StructureDefinition/location-established</td>
+<td>The period over which the location is open</td>
+<td>
+<div><a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/StructureDefinition-HpiLocation.html'>HpiLocation</a></div>
+</td>
+</tr>
+<tr>
+<td>hpi</td>
+<td><a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/StructureDefinition-organization-period.html'>organization-period</a></td>
+<td>
+<div>Organization</div>
+</td>
+<td>http://hl7.org.nz/fhir/hpi/StructureDefinition/organization-period</td>
+<td>The period over which the Organization is active</td>
+<td>
+<div><a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/StructureDefinition-HpiOrganization.html'>HpiOrganization</a></div>
+</td>
+</tr>
+<tr>
+<td>hpi</td>
+<td><a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/StructureDefinition-practitionerRole-creator.html'>practitionerRole-creator</a></td>
+<td>
+<div>PractitionerRole</div>
+</td>
+<td>http://hl7.org.nz/fhir/hpi/StructureDefinition/practitionerRole-creator</td>
+<td>The organisation and person that created this role</td>
+<td>
+<div><a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/StructureDefinition-HpiPractitionerRole.html'>HpiPractitionerRole</a></div>
+</td>
+</tr>
+<tr>
+<td>hpi</td>
+<td><a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/StructureDefinition-practitionerRole-status.html'>practitionerRole-status</a></td>
+<td>
+<div>PractitionerRole</div>
+</td>
+<td>http://hl7.org.nz/fhir/hpi/StructureDefinition/practitionerRole-status</td>
+<td>The status of the role - active,ended</td>
+<td>
+<div><a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/StructureDefinition-HpiPractitionerRole.html'>HpiPractitionerRole</a></div>
+</td>
+</tr>
+<tr>
+<td>hpi</td>
+<td><a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/StructureDefinition-registration-initial-date.html'>registration-initial-date</a></td>
+<td>
+<div>Practitioner.qualification</div>
+</td>
+<td>http://hl7.org.nz/fhir/hpi/StructureDefinition/registration-initial-date</td>
+<td>The date the practitioner first became registered with the Responsible Authority or professional body</td>
+<td>
+<div><a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/StructureDefinition-HpiPractitioner.html'>HpiPractitioner</a></div>
+</td>
+</tr>
+<tr>
+<td>hpi</td>
+<td><a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/StructureDefinition-registration-status.html'>registration-status</a></td>
+<td>
+<div>Practitioner.qualification</div>
+</td>
+<td>http://hl7.org.nz/fhir/hpi/StructureDefinition/registration-status</td>
+<td>An indicator of the practicing status of the practitioner as supplied by their Responsible Authority or professional body.</td>
+<td>
+<div><a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/StructureDefinition-HpiPractitioner.html'>HpiPractitioner</a></div>
+</td>
+</tr>
+<tr>
+<td>hpi</td>
+<td><a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/StructureDefinition-scope-of-practice.html'>scope-of-practice</a></td>
+<td>
+<div>Practitioner.qualification</div>
+</td>
+<td>http://hl7.org.nz/fhir/hpi/StructureDefinition/scope-of-practice</td>
+<td>The type or range of health services a practitioner is authorized to perform, as determined by the Responsible Authority or professional body.</td>
+<td>
+<div><a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/StructureDefinition-HpiPractitioner.html'>HpiPractitioner</a></div>
+</td>
+</tr>
+<tr>
+<td>northernRegion</td>
+<td><a href='http://build.fhir.org/ig/HL7NZ/northernRegion/branches/master/StructureDefinition-authorizedByPatient.html'>authorizedByPatient</a></td>
+<td>
+<div>Address</div>
+<div>Telecom</div>
+</td>
+<td>http://hl7.org.nz/fhir/northernregion/StructureDefinition/authorizedByPatient</td>
+<td>If true, then indicates that the patient as authorized the use of this address or telecom to contact them.</td>
+<td>
+<div><a href='http://build.fhir.org/ig/HL7NZ/northernRegion/branches/master/StructureDefinition-HaPatient.html'>HaPatient</a></div>
+</td>
+</tr>
+<tr>
+<td>northernRegion</td>
+<td><a href='http://build.fhir.org/ig/HL7NZ/northernRegion/branches/master/StructureDefinition-validatedByPatient.html'>validatedByPatient</a></td>
+<td>
+<div>Address</div>
+<div>Telecom</div>
+</td>
+<td>http://hl7.org.nz/fhir/northernregion/StructureDefinition/validatedByPatient</td>
+<td>If true, then indicates that the patient as indicated that the data is correct. Defined by healthAlliance</td>
+<td>
+<div><a href='http://build.fhir.org/ig/HL7NZ/northernRegion/branches/master/StructureDefinition-HaPatient.html'>HaPatient</a></div>
+<div><a href='http://build.fhir.org/ig/HL7NZ/northernRegion/branches/master/StructureDefinition-HaPatient.html'>HaPatient</a></div>
+</td>
+</tr>
+</table>
+<br/>
+<h2>ValueSets</h2>
+<table width='100%' border='1' cellspacing='0' cellpadding='5px'>
+<tr><th>IG</th><th>Name</th><th>Url (CodeSystems)</th><th>Description</th><th>Where used</th></tr>
+<tr>
+<td>nzbase</td>
+<td>Iwi</td>
+<td>
+<a href='http://build.fhir.org/ig/HL7NZ/nzbase/branches/master/ValueSet-Iwi.html'>http:/hl7.org.nz/fhir/ValueSet/iwi</a>
+<div><a href='http://build.fhir.org/ig/HL7NZ/nzbase/branches/master/CodeSystem-Iwi' >(https://standards.digital.health.nz/cs/iwi)</a></div>
+</td>
+<td>New Zealand iwi codes</td>
+<td>
+<div><a href='http://build.fhir.org/ig/HL7NZ/nzbase/branches/master/StructureDefinition-patient-iwi.html'>Ext: patient-iwi</a></div>
+</td>
+</tr>
+<tr>
+<td>nzbase</td>
+<td>CitizenshipStatus</td>
+<td>
+<a href='http://build.fhir.org/ig/HL7NZ/nzbase/branches/master/ValueSet-citizenship-status.html'>http:/hl7.org.nz/fhir/ValueSet/citizenship-status</a>
+<div><a href='http://build.fhir.org/ig/HL7NZ/nzbase/branches/master/CodeSystem-CitizenshipStatus' >(https://standards.digital.health.nz/cs/citizenshipstatus)</a></div>
+</td>
+<td>Status of citizenship in NZ</td>
+<td>
+<div><a href='http://build.fhir.org/ig/HL7NZ/nzbase/branches/master/StructureDefinition-citizenship.html'>Ext: citizenship</a></div>
+</td>
+</tr>
+<tr>
+<td>nzbase</td>
+<td>DHB</td>
+<td>
+<a href='http://build.fhir.org/ig/HL7NZ/nzbase/branches/master/ValueSet-dhb.html'>http:/hl7.org.nz/fhir/ValueSet/dhb</a>
+<div><a href='http://build.fhir.org/ig/HL7NZ/nzbase/branches/master/CodeSystem-DHB' >(https://standards.digital.health.nz/cs/dhb-code)</a></div>
+</td>
+<td>dhb</td>
+<td>
+<div><a href='http://build.fhir.org/ig/HL7NZ/nzbase/branches/master/StructureDefinition-dhb.html'>Ext: dhb</a></div>
+</td>
+</tr>
+<tr>
+<td>nzbase</td>
+<td>DomicileCode</td>
+<td>
+<a href='http://build.fhir.org/ig/HL7NZ/nzbase/branches/master/ValueSet-domicile-code.html'>http:/hl7.org.nz/fhir/ValueSet/domicile-code</a>
+<div><a href='http://build.fhir.org/ig/HL7NZ/nzbase/branches/master/CodeSystem-DomicileCode' >(https://standards.digital.health.nz/cs/domicileCode)</a></div>
+</td>
+<td>domicileCode</td>
+<td>
+<div><a href='http://build.fhir.org/ig/HL7NZ/nzbase/branches/master/StructureDefinition-domicileCode.html'>Ext: domicileCode</a></div>
+</td>
+</tr>
+<tr>
+<td>nzbase</td>
+<td>Ethnicity</td>
+<td>
+<a href='http://build.fhir.org/ig/HL7NZ/nzbase/branches/master/ValueSet-ethnicity.html'>http:/hl7.org.nz/fhir/ValueSet/ethnic-group-level-4</a>
+<div><a href='http://build.fhir.org/ig/HL7NZ/nzbase/branches/master/CodeSystem-Ethnicity' >(https://standards.digital.health.nz/cs/ethnic-group-level-4)</a></div>
+</td>
+<td>Level 4 ethnicity codes</td>
+<td>
+<div><a href='http://build.fhir.org/ig/HL7NZ/nzbase/branches/master/StructureDefinition-nzEthnicity.html'>Ext: nzEthnicity</a></div>
+</td>
+</tr>
+<tr>
+<td>nzbase</td>
+<td>Infosource</td>
+<td>
+<a href='http://build.fhir.org/ig/HL7NZ/nzbase/branches/master/ValueSet-info-source.html'>http:/hl7.org.nz/fhir/ValueSet/info-source</a>
+<div><a href='http://build.fhir.org/ig/HL7NZ/nzbase/branches/master/CodeSystem-Infosource' >(https://standards.digital.health.nz/cs/infosource)</a></div>
+</td>
+<td>infosource</td>
+<td>
+<div><a href='http://build.fhir.org/ig/HL7NZ/nzbase/branches/master/StructureDefinition-birthPlace.html'>Ext: birthPlace</a></div>
+<div><a href='http://build.fhir.org/ig/HL7NZ/nzbase/branches/master/StructureDefinition-citizenship.html'>Ext: citizenship</a></div>
+<div><a href='http://build.fhir.org/ig/HL7NZ/nzbase/branches/master/StructureDefinition-informationsource.html'>Ext: informationsource</a></div>
+</td>
+</tr>
+<tr>
+<td>nhi</td>
+<td>AddressNotValidatedReason</td>
+<td>
+<a href='http://build.fhir.org/ig/HL7NZ/nhi/branches/master/ValueSet-AddressNotValidatedReason.html'>https://standards.digital.health.nz/fhir/ValueSet/addressnotvalidatedreason</a>
+<div><a href='http://build.fhir.org/ig/HL7NZ/nhi/branches/master/CodeSystem-AddressNotValidatedReason' >(http://hl7.org.nz/ValueSet/addressnotvalidatedreason)</a></div>
+</td>
+<td>The reason why the address was not validated</td>
+<td>
+<div><a href='http://build.fhir.org/ig/HL7NZ/nhi/branches/master/StructureDefinition-notValidatedAddressReason.html'>Ext: notValidatedAddressReason</a></div>
+</td>
+</tr>
+<tr>
+<td>hpi</td>
+<td>IdentifierUse</td>
+<td>
+<a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/ValueSet-identifier-use.html'>http://hl7.org.nz/fhir/ValueSet/identifier-use</a>
+<div><a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/CodeSystem-IdentifierUse' >(http://hl7.org/fhir/identifier-use)</a></div>
+</td>
+<td>Usage of identifier</td>
+<td>
+<div><a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/StructureDefinition-HpiLocation.html'>Location.identifier.system</a></div>
+<div><a href='http://build.fhir.org/ig/HL7NZ/undefined/branches/master/undefined'>Location.identifier.system</a></div>
+<div><a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/StructureDefinition-HpiOrganization.html'>Organization.identifier.system</a></div>
+<div><a href='http://build.fhir.org/ig/HL7NZ/undefined/branches/master/undefined'>Organization.identifier.system</a></div>
+<div><a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/StructureDefinition-HpiPractitioner.html'>Practitioner.identifier.system</a></div>
+<div><a href='http://build.fhir.org/ig/HL7NZ/undefined/branches/master/undefined'>Practitioner.identifier.system</a></div>
+<div><a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/StructureDefinition-HpiPractitioner.html'>Practitioner.qualification.identifier.system</a></div>
+<div><a href='http://build.fhir.org/ig/HL7NZ/undefined/branches/master/undefined'>Practitioner.qualification.identifier.system</a></div>
+<div><a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/StructureDefinition-HpiPractitionerRole.html'>PractitionerRole.identifier.system</a></div>
+<div><a href='http://build.fhir.org/ig/HL7NZ/undefined/branches/master/undefined'>PractitionerRole.identifier.system</a></div>
+</td>
+</tr>
+<tr>
+<td>hpi</td>
+<td>LocationAliasType</td>
+<td>
+<a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/ValueSet-location-alias-type.html'>http://hl7.org.nz/fhir/ValueSet/location-alias-type</a>
+<div><a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/CodeSystem-LocationAliasType' >(https://standards.digital.health.nz/cs/alias-type)</a></div>
+</td>
+<td>The set of alias types that apply to Locations</td>
+<td>
+<div><a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/StructureDefinition-HpiLocation.html'>Location.alias.extension.valueCodeableConcept</a></div>
+<div><a href='http://build.fhir.org/ig/HL7NZ/undefined/branches/master/undefined'>Location.alias.extension.valueCodeableConcept</a></div>
+</td>
+</tr>
+<tr>
+<td>hpi</td>
+<td>LocationType</td>
+<td>
+<a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/ValueSet-location-type.html'>http://hl7.org.nz/fhir/ValueSet/location-type</a>
+<div><a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/CodeSystem-LocationType' >(https://standards.digital.health.nz/cs/location-type)</a></div>
+</td>
+<td>Type of Location</td>
+<td>
+<div><a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/StructureDefinition-HpiLocation.html'>Location.type</a></div>
+<div><a href='http://build.fhir.org/ig/HL7NZ/undefined/branches/master/undefined'>Location.type</a></div>
+</td>
+</tr>
+<tr>
+<td>hpi</td>
+<td>OrganizationAliasType</td>
+<td>
+<a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/ValueSet-organization-alias-type.html'>http://hl7.org.nz/fhir/ValueSet/organization-alias-type</a>
+<div><a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/CodeSystem-OrganizationAliasType' >(https://standards.digital.health.nz/cs/alias-type)</a></div>
+</td>
+<td>The set of alias types that apply to Organizations</td>
+<td>
+<div><a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/StructureDefinition-HpiOrganization.html'>Organization.alias.extension.valueCodeableConcept</a></div>
+<div><a href='http://build.fhir.org/ig/HL7NZ/undefined/branches/master/undefined'>Organization.alias.extension.valueCodeableConcept</a></div>
+</td>
+</tr>
+<tr>
+<td>hpi</td>
+<td>PractitionerAdditionalAuthorization</td>
+<td>
+<a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/ValueSet-practitioner-additional-authorization.html'>http://hl7.org.nz/fhir/ValueSet/practitioner-additional-authorisation</a>
+<div><a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/CodeSystem-PractitionerAdditionalAuthorization' >(https://standards.digital.health.nz/cs/practitioner-additional-authorization)</a></div>
+</td>
+<td>A coded type for additional authorisations</td>
+<td>
+<div><a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/StructureDefinition-additional-authorization.html'>Ext: additional-authorization</a></div>
+</td>
+</tr>
+<tr>
+<td>hpi</td>
+<td>RegistrationAuthority</td>
+<td>
+<a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/ValueSet-practitioner-registration-authority.html'>http://hl7.org.nz/fhir/ValueSet/practitioner-registration-authority</a>
+<div><a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/CodeSystem-RegistrationAuthority' >(https://standards.digital.health.nz/cs/practitioner-registration-authority)</a></div>
+</td>
+<td>The coded form of the qualification - eg medical or Nursing council identifier</td>
+<td>
+<div><a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/StructureDefinition-HpiPractitioner.html'>Practitioner.qualification.code</a></div>
+<div><a href='http://build.fhir.org/ig/HL7NZ/undefined/branches/master/undefined'>Practitioner.qualification.code</a></div>
+</td>
+</tr>
+<tr>
+<td>hpi</td>
+<td>PractitionerRegistrationStatus</td>
+<td>
+<a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/ValueSet-practitioner-registration-status.html'>http://hl7.org.nz/fhir/ValueSet/practitioner-registration-status</a>
+<div><a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/CodeSystem-PractitionerRegistrationStatus' >(https://standards.digital.health.nz/cs/practitioner-registration-status)</a></div>
+</td>
+<td>The code list represents the current practicing status of the Provider Person as per their registration with an RA or a health worker source.</td>
+<td>
+<div><a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/StructureDefinition-registration-status.html'>Ext: registration-status</a></div>
+</td>
+</tr>
+<tr>
+<td>hpi</td>
+<td>PrctitionerScopeOfPractice</td>
+<td>
+<a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/ValueSet-practitioner-scope-of-practice.html'>http://hl7.org.nz/fhir/ValueSet/practitioner-scope-of-practice</a>
+<div><a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/CodeSystem-PrctitionerScopeOfPractice' >(https://standards.digital.health.nz/cs/practitioner-scope-of-practice)</a></div>
+</td>
+<td>A coded type for professional scope of practice.</td>
+<td>
+<div><a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/StructureDefinition-scope-of-practice.html'>Ext: scope-of-practice</a></div>
+</td>
+</tr>
+<tr>
+<td>hpi</td>
+<td>PractitionerRoleStatusReason</td>
+<td>
+<a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/ValueSet-practitionerRole-status-reason.html'>http://hl7.org.nz/fhir/ValueSet/practitionerrole-status-reason</a>
+<div><a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/CodeSystem-PractitionerRoleStatusReason' >(https://standards.digital.health.nz/cs/practitionerrole-status-reason)</a></div>
+</td>
+<td>The reason for the current status of PractitionerRole</td>
+<td>
+<div><a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/StructureDefinition-practitionerRole-status.html'>Ext: practitionerRole-status</a></div>
+</td>
+</tr>
+<tr>
+<td>hpi</td>
+<td>PractitionerRoleCodes</td>
+<td>
+<a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/ValueSet-practitionerrole-codes.html'>http://hl7.org.nz/fhir/ValueSet/practitionerrole-codes</a>
+<div><a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/CodeSystem-PractitionerRoleCodes' >(https://standards.digital.health.nz/cs/practitionerrole-codes)</a></div>
+</td>
+<td>Coded roles that can be in a PractitionerRole</td>
+<td>
+<div><a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/StructureDefinition-HpiPractitionerRole.html'>PractitionerRole.code</a></div>
+<div><a href='http://build.fhir.org/ig/HL7NZ/undefined/branches/master/undefined'>PractitionerRole.code</a></div>
+</td>
+</tr>
+</table>
+<br/>
+<h2>CodeSystems</h2>
+<table width='100%' border='1' cellspacing='0' cellpadding='5px'>
+<tr><th>IG</th><th>Name</th><th>Url</th><th>Description</th></tr>
+<tr>
+<td>nzbase</td>
+<td>Iwi</td>
+<td><a href='http://build.fhir.org/ig/HL7NZ/nzbase/branches/master/CodeSystem-Iwi.html'>https://standards.digital.health.nz/cs/iwi</a></td>
+<td>New Zealand iwi codes</td>
+</tr>
+<tr>
+<td>nzbase</td>
+<td>CitizenshipStatus</td>
+<td><a href='http://build.fhir.org/ig/HL7NZ/nzbase/branches/master/CodeSystem-citizenshipStatus.html'>https://standards.digital.health.nz/cs/citizenshipstatus</a></td>
+<td>Status of citizenship in NZ</td>
+</tr>
+<tr>
+<td>nzbase</td>
+<td>Dhb</td>
+<td><a href='http://build.fhir.org/ig/HL7NZ/nzbase/branches/master/CodeSystem-dhb.html'>https://standards.digital.health.nz/cs/dhb-code</a></td>
+<td>District Health Board Code</td>
+</tr>
+<tr>
+<td>nzbase</td>
+<td>DomicileCode</td>
+<td><a href='http://build.fhir.org/ig/HL7NZ/nzbase/branches/master/CodeSystem-domicileCode.html'>https://standards.digital.health.nz/cs/domicileCode</a></td>
+<td>domicileCode</td>
+</tr>
+<tr>
+<td>nzbase</td>
+<td>EthnicityL4</td>
+<td><a href='http://build.fhir.org/ig/HL7NZ/nzbase/branches/master/CodeSystem-ethnicityL4.html'>https://standards.digital.health.nz/cs/ethnic-group-level-4</a></td>
+<td>Level 4 ethnicity codes</td>
+</tr>
+<tr>
+<td>nzbase</td>
+<td>Infosource</td>
+<td><a href='http://build.fhir.org/ig/HL7NZ/nzbase/branches/master/CodeSystem-infosource.html'>https://standards.digital.health.nz/cs/infosource</a></td>
+<td>infosource</td>
+</tr>
+<tr>
+<td>nhi</td>
+<td>AddressNotValidated</td>
+<td><a href='http://build.fhir.org/ig/HL7NZ/nhi/branches/master/CodeSystem-AddressNotValidated.html'>https://standards.digital.health.nz/cs/addressnotvalidatedreason</a></td>
+<td>The reason why the address was not validated</td>
+</tr>
+<tr>
+<td>hpi</td>
+<td>AliasType</td>
+<td><a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/CodeSystem-alias-type.html'>https://standards.digital.health.nz/cs/alias-type</a></td>
+<td>Used in Organization and Location to indicate what is the type of Alias</td>
+</tr>
+<tr>
+<td>hpi</td>
+<td>IdentifierUse</td>
+<td><a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/CodeSystem-identifier-use.html'>https://standards.digital.health.nz/cs/identifier-use</a></td>
+<td>Usage of identifier</td>
+</tr>
+<tr>
+<td>hpi</td>
+<td>LocationType</td>
+<td><a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/CodeSystem-location-type.html'>https://standards.digital.health.nz/cs/location-type</a></td>
+<td>Type of Location</td>
+</tr>
+<tr>
+<td>hpi</td>
+<td>AdditionalAuthorization</td>
+<td><a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/CodeSystem-practitioner-additional-authorization.html'>https://standards.digital.health.nz/cs/practitioner-additional-authorization</a></td>
+<td>Additional authorisations that a practitioner is authorised to practice or prescribe.</td>
+</tr>
+<tr>
+<td>hpi</td>
+<td>PractitionerRegistrationAuthority</td>
+<td><a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/CodeSystem-practitioner-registration-authority.html'>https://standards.digital.health.nz/cs/practitioner-registration-authority</a></td>
+<td>The coded form of the qualification - eg medical or Nursing council identifier</td>
+</tr>
+<tr>
+<td>hpi</td>
+<td>PractitionerRegistrationStatus</td>
+<td><a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/CodeSystem-practitioner-registration-status.html'>https://standards.digital.health.nz/cs/practitioner-registration-status</a></td>
+<td>The code list represents the current practicing status of the Provider Person as per their registration with an RA or a health worker source.</td>
+</tr>
+<tr>
+<td>hpi</td>
+<td>PractitionerRoleStatusReason</td>
+<td><a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/CodeSystem-practitionerRole-status-reason.html'>https://standards.digital.health.nz/cs/practitionerrole-status-reason</a></td>
+<td>The reason for the current status of PractitionerRole</td>
+</tr>
+<tr>
+<td>hpi</td>
+<td>PractitionerRoleCodes</td>
+<td><a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/CodeSystem-practitionerrole-codes.html'>https://standards.digital.health.nz/cs/practitionerrole-codes</a></td>
+<td>Coded roles that can be in a PractitionerRole</td>
+</tr>
+<tr>
+<td>hpi</td>
+<td>ScopeOfPractice</td>
+<td><a href='http://build.fhir.org/ig/HL7NZ/hpi/branches/master/CodeSystem-scopeOfPractice.html'>https://standards.digital.health.nz/cs/practitioner-scope-of-practice</a></td>
+<td>A classification of the type or range of health services that a practitioner is authorised to provide, as determined by the Responsible Authority or other statutory authority (e.g. PHARMAC), that is, what the practitioner can or cannot do. It includes Scope of Practice as defined by the Health Practitioners Competence Assurance Act 2003, any special authorisations granted, and any conditions or limitations imposed by the Responsible Authority.</td>
+</tr>
+</table>
+<br/>
+<br/>
+<em>Summary generated: Mon Jun 15 2020 11:03:58 GMT+1200 (New Zealand Standard Time)
+</body>
+</html>
