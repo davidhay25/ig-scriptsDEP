@@ -9,7 +9,8 @@ const junk = require('junk');
 
 let fs = require('fs');
 //note that the folder is the same as the IG id... - important for creating links...
-let arFolder = ["nzbase","nhi","hpi","northernRegion"]
+//let arFolder = ["nzbase","nhi","hpi","northernRegion"]
+let arFolder = ["nhi","hpi","northernRegion"]
 let onlineServer = "http://build.fhir.org/ig/HL7NZ/";   //where the IGs are. Allows links from the summary...
 let onlineBranch = "/branches/master/";     //currently the dev master branch. Used for the link.
 
@@ -55,7 +56,7 @@ arFolder.forEach(function(folder){
                     obj.linkName = "StructureDefinition-"+profile.id + ".html"
                     hashValueSetPaths[vsUrl].push(obj)
 
-                    hashValueSetPaths[vsUrl].push({display:ed.path})
+                    //hashValueSetPaths[vsUrl].push({display:ed.path})
 
                 }
 
@@ -118,7 +119,7 @@ arExtensions.sort(function(a,b){
 })
 */
 //load the ValueSets & CodeSystems
-let arVS = [], arCS = []
+let arVS = [], arCS = [], arNs = []
 
 arFolder.forEach(function(folder){
     let fullFolderPath = "../" + folder + "/input/vocabulary";
@@ -158,6 +159,11 @@ arFolder.forEach(function(folder){
                         arCS.push(cs)
     
                         break;
+                    case 'NamingSystem' :
+                        json.IG = folder;
+                        arNs.push(json)
+
+                        break;
                 }
             }
         })
@@ -184,8 +190,9 @@ ar.push("<link rel='stylesheet' type='text/css' href='https://stackpath.bootstra
 ar.push("</head>")
 
 ar.push("<body  style='padding: 8px' >")
-ar.push("<h1  class='alert alert-secondary' >Extensions, ValueSets and CodeSystems defined for New Zealand Implementation Guides</h1>")
+ar.push("<h1  class='alert alert-secondary' >Extensions, ValueSets, CodeSystems and Identifiers defined for New Zealand Implementation Guides</h1>")
 
+ar.push("<div><div class='float-right'><em>Summary generated: " + new Date().toString() + "</div></div>");
 
 ar.push("<h2>Extensions</h2>")
 ar.push("<table width='100%' border='1' cellspacing='0' cellpadding='5px'>")
@@ -262,10 +269,6 @@ arVS.forEach(function(vs){
         paths.forEach(function(obj){
             //let link = obj.linkName
             let link = onlineServer + obj.IG + onlineBranch + obj.linkName;
-
-
-
-
             ar.push("<div><a href='" + link + "'>" + obj.display + "</a></div>");
         })
     }
@@ -304,6 +307,57 @@ ar.push("</table>")
 ar.push("<br/>");
 
 
+
+//render the identifiers
+ar.push("<h2>Identifiers (from namingSystem)</h2>")
+ar.push("<table width='100%' border='1' cellspacing='0' cellpadding='5px'>");
+ar.push("<tr><th>IG</th><th>Description</th><th>Url</th><th>Other identifiers</th><th>Responsible</th></tr>")
+
+arNs.forEach(function(ns){
+    let otherId =[];        //to record other ids than url
+    let nsLne = "<tr>";
+    nsLne += "<td>" + ns.IG + "</td>";
+    nsLne += "<td>" + ns.description + "</td>";
+    nsLne += "<td>" 
+    if (ns.uniqueId) {
+        ns.uniqueId.forEach(function(id){
+            if (id.type == "uri") {
+
+                let link = onlineServer + ns.IG + onlineBranch + "NamingSystem-" + ns.id + ".html";
+                //ar.push("<td><a href='" + link + "'>"  + ext.url + "</a></td>")
+
+                nsLne += "<div><a href='" + link + "'>" + id.value + "</a></div>"
+
+
+                //nsLne += "<div>" + id.value + "</div>"
+            } else {
+                otherId.push(id)
+            }
+        })
+    }
+    nsLne += "</td>" 
+    
+    //Other Ids (if any)
+    nsLne += "<td>" 
+    if (otherId.length > 0) {
+        otherId.forEach(function(id){
+            nsLne += "<div>" + id.value + "</div>"
+        })
+    }
+    nsLne += "</td>" 
+    nsLne += "<td>" + ns.responsible + "</td>";
+    
+    nsLne += "</tr>"
+    ar.push(nsLne)
+
+})
+
+ar.push("</table>")
+ar.push("<br/>");
+
+
+
+
 ar.push("<br/>");
 ar.push("<em>Summary generated: " + new Date().toString());// toISOString() )
 
@@ -324,6 +378,8 @@ if (uploadToIGServer) {
         }
     })
 }
+
+
 
 
 //scp ./summary.html root@igs.clinfhir.com:/var/www/html/summary.html

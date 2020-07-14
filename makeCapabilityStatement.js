@@ -21,26 +21,17 @@ if (!igName) {
 
 let fullPath = igRoot + igName;
 
-
-
 if ( ! fs.existsSync(fullPath)) {
     console.log("The IG '" + igName + "' does not exist (at least, there is no folder with that name.")
     return;
 }
 
-
-
 let rootPath = igRoot + igName +  "/input/capabilities/";
 
+let outFile = igRoot + igName + "/fsh/ig-data/input/pagecontent/CapabilityStatement.xml";
+let outFile1 = igRoot + igName + "/input/pagecontent/CapabilityStatement.xml";  // for IG publisher
 
-let outFile = igRoot + igName + "/fsh/ig-data/input/pagecontent/capstmt.xml";
-let outFile1 = igRoot + igName + "/input/pagecontent/capstmt.xml";  // for IG publisher
-
-
-
-
-
-console.log('Building summary of the CapabilityStataement resource ' + igName)
+console.log('Building summary of the CapabilityStatement resource ' + igName)
 console.log("IG is located at "+ fullPath);
 console.log('Location of CapabilityStatement:' + rootPath)
 console.log('Writing output to ' + outFile)
@@ -48,7 +39,9 @@ console.log(" and " + outFile1)
 
 let ar = []
 ar.push("<div xmlns='http://www.w3.org/1999/xhtml'>")
-ar.push("<br/><strong>CapabilityStatement summary</strong><br/><br/>")
+ar.push("<br/><div>API summary (generated from the capabilityStatement resource)</div><br/><br/>")
+
+
 
 //let fullFolderPath = "../" + rootPath;
 console.log(rootPath)
@@ -62,6 +55,12 @@ if (fs.existsSync(rootPath)) {
             let fullFileName = rootPath + "/"+ name;
             let contents = fs.readFileSync(fullFileName).toString();
             let capStmt = JSON.parse(contents)
+
+            //todo - convert markdown into HTML...
+            if (capStmt.description) {
+                ar.push('<br/><div>' + capStmt.description + "</div><br/>") 
+            }
+
             capStmt.rest.forEach(function(rest){
                 rest.resource.forEach(function(res){
                     ar.push(`<a name="${res.type}"> </a>`)   
@@ -104,6 +103,20 @@ if (fs.existsSync(rootPath)) {
                     }
 
 
+                    if (res.searchInclude) {
+                        ar.push("<strong>Search includes</strong>")
+                        ar.push("<table class='table table-bordered table-condensed'>")
+                        ar.push("<tr><th width='15%'>Name</th></tr>")
+                        res.searchInclude.forEach(function(inc){
+                            ar.push("<tr>")
+                            ar.push(`<td>${inc}</td>`)
+                            ar.push("</tr>")
+    
+                        })
+                        ar.push("</table>")
+                        ar.push("<em>These are the _include parameters that are supported on Patient searches</em>")
+                        ar.push("<br/><br/>")
+                    }
 
 
                 })

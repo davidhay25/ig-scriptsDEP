@@ -101,7 +101,7 @@ fs.readdirSync(rootPath).forEach(function(file) {
         case 'CodeSystem' :
 
             let cs = loadFile(file)
-
+//console.log(cs.url)
             let arCs = file.split('.')
             let csHtmlFile = arCs[0] + '.html'
 
@@ -129,9 +129,17 @@ fs.readdirSync(rootPath).forEach(function(file) {
             vsLne += "<td>" 
             vs.compose.include.forEach(function(item) {
 
-                
-
+            
                 let csHtmlFile = hashCS[item.system];
+
+                if (! csHtmlFile && (item.system.indexOf('http://hl7.org/') > -1 )) {
+///console.log(item.system)
+                    //this is a CS defined in the spec...
+                    let ar = item.system.split('/')
+                    csHtmlFile = "http://hl7.org/fhir/valueset-" + ar[ar.length - 1] + ".html"
+                }
+
+
                 let csLink = "<a href='"+ csHtmlFile +"'>" + item.system + "</a>";
 
                 vsLne += "<div>" + csLink + "</div>"
@@ -171,7 +179,7 @@ fs.readdirSync(rootPath).forEach(function(file) {
 
 })
 arVS.push("</table>")
-arVS.push("<br/></br/>")
+arVS.push("<br/><br/>")
 //arVS.push("\r\n")
 
 let newAR = arVS.concat(arCS)
@@ -182,6 +190,42 @@ let newAR = arVS.concat(arCS)
 //newAR.splice(0,0,'<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">')
 
 //newAR.push('</div>')
+
+
+//now find ValueSets used by IG but defined elsewhere
+
+let arFolders = ["profiles","extensions"]
+//console.log(arFolders)
+arFolders.forEach(function(folder) {
+    let folderPath = igRoot + igName +  "/input/" + folder + "/";
+    //console.log(folderPath)
+    if (  fs.existsSync(folderPath)) {
+        fs.readdirSync(folderPath).forEach(function(file) {
+            //console.log(file)
+            let ar = file.split('-')
+            if (ar[0] == "StructureDefinition") {
+                let fullFileName = folderPath + file
+                //console.log(fullFileName)
+                let contents = fs.readFileSync(fullFileName, {encoding: 'utf8'});
+                let sd = JSON.parse(contents)
+                if (sd.snapshot) {
+                    sd.snapshot.element.forEach(function(ed){
+                        //console.log(ed.path)
+                        if (ed.binding) {
+                            console.log(ed.path, ed.binding.valueSet)
+                        }
+                    })
+                }
+
+            }
+           
+        })      
+
+    }
+})
+
+
+
 
 let fle = newAR.join('\r\n');
 fs.writeFileSync(outFile,fle);      //in sushi
